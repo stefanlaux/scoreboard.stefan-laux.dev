@@ -20,14 +20,13 @@ Button{
   font-size: 150%;
   padding: 10px;
   display: flex;
-  height: 100%;
   margin: 5px;
-  width: fit-content;
-  max-width: 500px;
+  width: 40vw;
   gap: 5px;
-  flex-wrap: nowrap;
+  overflow: hidden;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
 }
 
 hr{
@@ -49,6 +48,7 @@ hr{
 .deleteButton{
   transition: opacity 1s;
   opacity: 0;
+  margin-left: auto!important;
 }
 
 .card:hover .deleteButton{
@@ -56,9 +56,10 @@ hr{
   opacity: 1;
 }
 
-.stepper {
-  position: absolute;
-  top: 19%;
-  left: 5%;
-  transform: translate(-50%, -50%);
+.first{
+  background-color: yellow!important;
+}
+
+:host{
+  --animate-delay: 10s;
 }

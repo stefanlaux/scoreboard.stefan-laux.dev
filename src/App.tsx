@@ -103,18 +103,6 @@ function App() {
 
   return (
     <div className="App">
-        <Stepper  className={"stepper"} orientation={"vertical"}>
-            <Step className={"step"}>
-                <StepLabel>Add Time</StepLabel>
-                <StepContent>
-                    <br/>
-                    <br/>
-                </StepContent>
-            </Step>
-            <Step>
-                <StepLabel>View Times</StepLabel>
-            </Step>
-        </Stepper>
         <div className={"input"}>
                 <TextField onKeyPress={() => handleKeyPress(event)} autoComplete={"off"} required placeholder={"Max Muster"} id={"name"} label={"Name"} variant={"outlined"}></TextField>
                 <TextField onKeyPress={() => handleKeyPress(event)} autoComplete={"off"} required placeholder={"MIN:S:MS"} id={"time"} label={"Time"} variant={"outlined"}></TextField>
