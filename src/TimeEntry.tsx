@@ -20,15 +20,15 @@ export default function TimeEntry({rank, name, time, onDelete}: props) {
     useEffect(() => {
         if ((rank ) == 1){
             // @ts-ignore
-            document.getElementById("1").style.backgroundColor = "#bebc24"
+            document.getElementById("1").style.backgroundColor = "gold"
         }
         if ((rank ) == 2){
             // @ts-ignore
-            document.getElementById("2").style.backgroundColor = "#9ea7a9"
+            document.getElementById("2").style.backgroundColor = "silver"
         }
         if ((rank ) == 3){
             // @ts-ignore
-            document.getElementById("3").style.backgroundColor = "#793838"
+            document.getElementById("3").style.backgroundColor = "#CD7F32"
         }
     }, []);
 
