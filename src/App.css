@@ -29,6 +29,12 @@ Button{
   justify-content: start;
 }
 
+.info {
+  position: absolute;
+  top: 7%;
+  right: 5%;
+}
+
 hr{
   width: 80%;
 }

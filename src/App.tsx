@@ -3,14 +3,16 @@ import './App.css'
 import {
     Button,
     FormControl,
-    FormGroup,
+    FormGroup, IconButton,
     Input,
     Step, StepContent,
     StepLabel,
     Stepper,
     TextField,
-    useStepContext
+    useStepContext,
+    Dialog, DialogTitle, DialogActions, DialogContentText, DialogContent
 } from "@mui/material";
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import React, {useEffect, useState} from "react";
 import TimeEntry from "./TimeEntry";
 import {Simulate} from "react-dom/test-utils";
@@ -27,6 +29,7 @@ export class LeaderboardEntry {
 }
 function App() {
 
+    const [open, setOpen] = useState(false)
     const [times, setTimes] = useState<LeaderboardEntry[]>([])
 
     const sortTimes = (times: LeaderboardEntry[]) => {
@@ -101,8 +104,36 @@ function App() {
         }
     }
 
+    const handleInfoOpen = () =>{
+        setOpen(true)
+    }
+
+    const handleInfoClose = () =>{
+        setOpen(false)
+    }
+
   return (
     <div className="App">
+        <div className="info">
+            <IconButton onClick={handleInfoOpen}>
+                <InfoOutlinedIcon color={"action"}></InfoOutlinedIcon>
+            </IconButton>
+            <Dialog open={open} onClose={handleInfoClose}>
+                <DialogTitle>Info</DialogTitle>
+                <DialogContent>
+                    <DialogContentText>
+                        You can add a Time by adding you Name and Time and press submit. You can show the podium by pressing the podium button below.
+                    </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={handleInfoClose} autoFocus>
+                        Close
+                    </Button>
+                </DialogActions>
+            </Dialog>
+
+
+        </div>
         <div className={"input"}>
                 <TextField onKeyPress={() => handleKeyPress(event)} autoComplete={"off"} required placeholder={"Max Muster"} id={"name"} label={"Name"} variant={"outlined"}></TextField>
                 <TextField onKeyPress={() => handleKeyPress(event)} autoComplete={"off"} required placeholder={"MIN:S:MS"} id={"time"} label={"Time"} variant={"outlined"}></TextField>
